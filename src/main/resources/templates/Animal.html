@@ -16,6 +16,7 @@
             <th scope="col">Name</th>
             <th scope="col">Type</th>
             <th scope="col">Age</th>
+            <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -24,6 +25,12 @@
             <td th:text="${animal.name}"></td>
             <td th:text="${animal.type}"></td>
             <td th:text="${animal.age}"></td>
+            <td>
+                <!-- Delete Button -->
+                <a th:href="@{animals/delete/{id}(id=${animal.id})}" class="btn btn-danger btn-sm">
+                    Delete
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>
