@@ -16,12 +16,17 @@ public interface AnimalRepository extends CrudRepository<Animal, Long> {
     List<Animal> getAllAnimalByNative();
 
     @Modifying
-    @Transactional
+    @Transactional //to manage the database transaction
     @Query(value = "UPDATE animal SET name = :name, type = :type, age = :age WHERE id = :id", nativeQuery = true)
-    void updateAnimalById(@Param("id") Long id,
+    int updateAnimalById(@Param("id") Long id,
                           @Param("name") String name,
                           @Param("type") String type,
                           @Param("age") Integer age);
+
+
+    @Transactional //to manage the database transaction
+    @Query(value = "Select * from animal where id=:id", nativeQuery = true)
+    Animal getAnimalById(@Param("id") Long id);
 
 
 }

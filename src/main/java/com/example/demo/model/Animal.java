@@ -26,31 +26,36 @@ public class Animal {
     public Animal() {
 
     }
-//    public String getName() {
-//        return name;
-//    }
-//    public String getType() {
-//        return type;
-//    }
-//    public int getAge() {
-//        return age;
-//    }
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//    public void setType(String type) {
-//        this.type = type;
-//    }
-//    public void setAge(int age) {
-//        this.age = age;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 }

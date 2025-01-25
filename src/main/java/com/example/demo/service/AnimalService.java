@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.Exception.NotFoundException;
 import com.example.demo.Repository.AnimalRepository;
 import com.example.demo.model.Animal;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,14 @@ public class AnimalService {
             return new ArrayList<Animal>();
         }
     }
-    public void updateAnimalById(long id,Animal animal){
-        animalRepository.updateAnimalById(id,animal.getName(),animal.getType(),animal.getAge());
+    public Animal updateAnimalById(long id, Animal animal) throws NotFoundException {
+        int flag=animalRepository.updateAnimalById(id,animal.getName(),animal.getType(),animal.getAge());
+        if(flag==0){
+            throw new NotFoundException("animal not found in database!!");
+        }
+        System.out.println("flag=="+flag);
+        Animal updatedAnimal=animalRepository.getAnimalById(id);
+        return updatedAnimal;
     }
     @Transactional
     public void deleteAnimal(Long id) {
