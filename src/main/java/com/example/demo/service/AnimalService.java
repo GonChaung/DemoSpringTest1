@@ -16,9 +16,9 @@ public class AnimalService {
     AnimalRepository animalRepository;
     public List<Animal> getAllAnimals()
     {
-        List<Animal> result = (List<Animal>) animalRepository.getAllAnimalByNative();
-        if(result.size() > 0) {
-            return result;
+        List<Animal> animals = (List<Animal>) animalRepository.getAllAnimalByNative();
+        if(animals.size() > 0) {
+            return animals;
         } else {
             return new ArrayList<Animal>();
         }
