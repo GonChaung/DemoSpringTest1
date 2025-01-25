@@ -15,7 +15,7 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 @RestController
 @RequestMapping("/api/v1/animals")
 public class AnimalController {
-
+   //changes by felix
     @Autowired
     private AnimalService animalService;
 
