@@ -14,6 +14,7 @@ import java.util.List;
 public class AnimalService {
     @Autowired
     AnimalRepository animalRepository;
+
     public List<Animal> getAllAnimals()
     {
         List<Animal> result = (List<Animal>) animalRepository.getAllAnimalByNative();
